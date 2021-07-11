@@ -57,8 +57,6 @@ const menu = document.querySelector(".nav_list");
 const menuItems = document.querySelectorAll(".nav_item");
 const themeBtn = document.querySelector(".theme_btn");
 const navbar = document.getElementById("nav");
-const form = document.querySelector("form");
-const input = document.querySelector("input");
 const year = document.querySelector(".year");
 const scrollTopBtn = document.querySelector(".top_link");
 
@@ -147,25 +145,6 @@ function displayPageItems(items) {
   list.innerHTML = page;
 }
 
-form.addEventListener("input", (e) => {
-  e.preventDefault();
-  if (!input.value) {
-    form.classList.add("error");
-  } else {
-    form.classList.remove("error");
-    if (input.type == "email") {
-      if (validateEmail(input.value)) {
-        form.classList.remove("error");
-      } else {
-        form.classList.add("error");
-      }
-    }
-  }
-});
-
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-});
 
 function validateEmail(email) {
   var re =
