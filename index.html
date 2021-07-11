@@ -172,12 +172,18 @@
     <h2>Contact</h2>
     <div class="contact-section">
       <form method="POST" data-netlify="true" netlify>
-        <label for="name">Name *</label>
-        <input type="text" id="name" placeholder="Full Name" autocomplete="off">
-        <label for="email">Email Address *</label>
-        <input name='Email' id="email" value="" type="email" placeholder="Enter Email Address" autocomplete="off">
-        <label for="message">Message *</label>
-        <textarea name="message" id="message" cols="30" rows="10"></textarea>
+        <div>
+          <label for="name">Name *</label>
+          <input type="text" id="name" placeholder="Full Name" autocomplete="off">
+        </div>
+        <div>
+          <label for="email">Email Address *</label>
+          <input name='Email' id="email" value="" type="email" placeholder="Enter Email Address" autocomplete="off">
+        </div>
+        <div>
+          <label for="message">Message *</label>
+          <textarea name="message" id="message" cols="30" rows="10"></textarea>
+        </div>
         <button type="submit" id="submit">
           Send
           <span><i class="fas fa-paper-plane"></i></span>
