@@ -34,28 +34,6 @@ form {
   }
 }
 
-.validate_email {
-  position: relative;
-}
-.error-icon {
-  position: absolute;
-  right: 1rem;
-  top: 3.6rem;
-}
-.error-text {
-  color: red;
-  font-style: italic;
-  float: right;
-  margin-top: 0.1rem;
-}
-.error-icon,
-.error-text {
-  display: none;
-}
-.error .error-text,
-.error .error-icon {
-  display: block;
-}
 button#submit {
   border: transparent;
   outline: none;
