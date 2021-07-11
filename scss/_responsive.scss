@@ -1,0 +1,153 @@
+@include media-mobile {
+  .hamburger_btn {
+    display: block;
+  }
+  .nav_list {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    transform: translateY(-150%);
+    transition: all 0.3s;
+  }
+  .nav_list.open {
+    transform: translateY(0);
+  }
+  nav {
+    .nav_links {
+      flex-direction: column;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100vh;
+      transform: translate(-50%, -50%);
+
+      li {
+        padding: 2rem 0;
+        transition: all 0.3s linear;
+        transform: translateX(200vw);
+
+        &:last-child {
+          padding: 2rem 0;
+        }
+        &.open {
+          transform: translateX(0);
+        }
+        a {
+          color: #fffffe;
+          font-size: 1.7rem;
+          font-weight: 700;
+
+          &:hover {
+            color: #bbb;
+          }
+        }
+      }
+    }
+  }
+}
+
+@for $i from 1 through 4 {
+  .nav_links li:nth-child(#{$i}) {
+    transition-delay: ($i * 0.1s) + 0.3s;
+  }
+}
+
+@include media-md {
+  .nav_links li a {
+    &::after {
+      content: "";
+      z-index: -1;
+      position: absolute;
+      width: 0;
+      height: 5px;
+      bottom: 3px;
+      left: 0;
+      background-color: var(--link-hover);
+      visibility: hidden;
+      transition: all 0.3s ease-in-out;
+    }
+    &:hover::after {
+      visibility: visible;
+      width: 100%;
+    }
+  }
+
+  // hero section
+
+  .hero {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0;
+    padding-top: 100px;
+
+    .hero-text {
+      width: 50%;
+    }
+    .hero-img {
+      width: 50%;
+    }
+  }
+
+  // about section
+
+  .about-section {
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+    align-items: center;
+
+    .about-text {
+      width: 50%;
+    }
+    .about-img {
+      width: 30%;
+    }
+  }
+
+  // contact section
+  .contact-section {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+  form {
+    width: 50%;
+  }
+  .details {
+    width: 50%;
+  }
+}
+
+@include media-lg {
+  footer {
+    justify-content: space-between;
+    flex-direction: row;
+  }
+}
+@media (max-width: 330px) {
+  h1 {
+    font-size: 1.6rem;
+  }
+  h2 {
+    font-size: 1.4rem;
+  }
+  p {
+    font-size: 0.9rem;
+  }
+  nav,
+  .about,
+  .contact,
+  footer {
+    padding: 2rem 1.2rem;
+  }
+  .hero {
+    padding: 2rem 1rem;
+  }
+  .menu_btn {
+    top: 2rem;
+  }
+}

@@ -1,0 +1,95 @@
+nav {
+  padding: 1rem 2rem;
+  @include flex();
+  justify-content: space-between;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  box-shadow: var(--shadow);
+  z-index: 11;
+
+  .nav_links {
+    @include flex();
+    justify-content: center;
+
+    li {
+      padding: 0 2rem;
+
+      &:last-child {
+        padding-right: 3rem;
+      }
+
+      a {
+        font-size: 1.2rem;
+        color: var(--a-color);
+        font-family: var(--a-font-family);
+        position: relative;
+        user-select: none;
+      }
+    }
+  }
+}
+
+// Theme Btn
+.theme_icon {
+  width: 2rem;
+}
+
+// Hamburger Btn
+.hamburger_btn {
+  width: 2rem;
+  height: 2rem;
+  position: relative;
+  z-index: 11;
+  cursor: pointer;
+  display: none;
+
+  .bar {
+    width: 100%;
+    height: 2px;
+    border-radius: 1px;
+    background-color: var(--menu-btn-color);
+    margin: 7px 0;
+    transition: 0.3s ease-in-out;
+  }
+
+  &.open {
+    .bar {
+      background-color: white;
+    }
+    .bar1 {
+      transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    .bar2 {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    .bar3 {
+      transform: rotate(45deg) translate(-6px, -8px);
+    }
+  }
+}
+
+.menu_btn {
+  @include flex();
+  justify-content: center;
+  gap: 0.5rem;
+  position: absolute;
+  right: 2rem;
+  top: 1.5rem;
+}
+
+.theme_btn {
+  width: 2rem;
+  height: 2rem;
+  z-index: 11;
+  cursor: pointer;
+  background-image: var(--theme-logo);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  object-fit: cover;
+}
